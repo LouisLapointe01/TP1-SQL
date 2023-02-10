@@ -1,5 +1,5 @@
 DROP TABLE Moniteur CASCADE CONSTRAINTS;
-DROP TABLE Specialité CASCADE CONSTRAINTS;
+DROP TABLE SpecialitÃ© CASCADE CONSTRAINTS;
 DROP TABLE Cours CASCADE CONSTRAINTS;
 DROP TABLE Adherent CASCADE CONSTRAINTS;
 DROP TABLE Suivre CASCADE CONSTRAINTS;
@@ -13,19 +13,19 @@ CONSTRAINT ck_PrenomM CHECK (PrenomM IS NOT NULL),
 CONSTRAINT ck_Adresse CHECK (Adresse IS NOT NULL),
 CONSTRAINT ck_DateNaiss CHECK (DateNaiss IS NOT NULL));
 
-CREATE TABLE Specialité(IdSpecialité NUMBER(5) ,NomS VARCHAR(30),
-CONSTRAINT pk_Specialité PRIMARY KEY(IdSpecialité),
-CONSTRAINT ck_IdSpecialité CHECK (IdSpecialité IS NOT NULL),
+CREATE TABLE SpecialitÃ©(IdSpecialitÃ© NUMBER(5) ,NomS VARCHAR(30),
+CONSTRAINT pk_SpecialitÃ© PRIMARY KEY(IdSpecialitÃ©),
+CONSTRAINT ck_IdSpecialitÃ© CHECK (IdSpecialitÃ© IS NOT NULL),
 CONSTRAINT ck_nomS CHECK (nomS  IS NOT NULL));
 
-CREATE TABLE Cours(CodeC NUMBER(5),Niveau VARCHAR(30) ,NbPlaces NUMBER(5),DateCours DATE,NoM NUMBER(5),IdSpecialité NUMBER(5),
+CREATE TABLE Cours(CodeC NUMBER(5),Niveau VARCHAR(30) ,NbPlaces NUMBER(5),DateCours DATE,NoM NUMBER(5),IdSpecialitÃ© NUMBER(5),
 CONSTRAINT pk_Cours PRIMARY KEY(CodeC),
 CONSTRAINT ck_CodeC CHECK (CodeC IS NOT NULL),
 CONSTRAINT ck_Niveau CHECK (Niveau  IS NOT NULL),
 CONSTRAINT ck_NbPlaces CHECK (NbPlaces > 0),
 CONSTRAINT ck_DateCours CHECK (DateCours IS NOT NULL),
 CONSTRAINT fk_noM FOREIGN KEY (NoM) REFERENCES Moniteur(NoM) on delete cascade,
-CONSTRAINT fk_idSpecialite FOREIGN KEY (idSpecialité) REFERENCES Specialité(IdSpecialité)on delete cascade);
+CONSTRAINT fk_idSpecialite FOREIGN KEY (idSpecialitÃ©) REFERENCES SpecialitÃ©(IdSpecialitÃ©)on delete cascade);
 
 CREATE TABLE Adherent(NoA NUMBER(5),NomA VARCHAR(30),PrenomA VARCHAR(30),AdresseA VARCHAR(30),TelA NUMBER(10),AgeA NUMBER(3),
 CONSTRAINT pk_Adherent PRIMARY KEY(NoA),
@@ -58,9 +58,9 @@ CONSTRAINT fk_d_CodeM FOREIGN KEY (CodeM) REFERENCES Materiel(CodeM)on delete ca
 INSERT INTO Moniteur VALUES (1,'Dujardin','Jean','123 rue du haut, Grenoble','01-09-1974');
 INSERT INTO Moniteur VALUES (2,'Clown','George ','Rue du bas, Grenoble','20-08-1987');
 
-INSERT INTO Specialité VALUES (1,'ski');
-INSERT INTO Specialité VALUES (2,'snowboard');
-INSERT INTO Specialité VALUES (3,'raquette');
+INSERT INTO SpecialitÃ© VALUES (1,'ski');
+INSERT INTO SpecialitÃ© VALUES (2,'snowboard');
+INSERT INTO SpecialitÃ© VALUES (3,'raquette');
 
 INSERT INTO Cours VALUES (1,'debutant',1,'01-02-2013',1,2);
 INSERT INTO Cours VALUES (2,'moyen',1,'02-02-2013',1,2);
