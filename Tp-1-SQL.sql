@@ -68,7 +68,7 @@ INSERT INTO Cours VALUES (3,'debutant',5,'01-02-2013',2,1);
 
 INSERT INTO Adherent VALUES (1,'Lapointe','Louis','103 Avenue Jules Julien, Toulouse',068475852,17);
 INSERT INTO Adherent VALUES (2,'Michel','Bernad','23 rue de rien, Tarbes',07888358471,69);
-INSERT INTO Adherent VALUES (3,'Coulibaly','Mohammed','Rue de la rue, Grenoble',NULL,19);
+INSERT INTO Adherent VALUES (3,'Nanas','Yann','Rue de la rue, Grenoble',NULL,19);
 
 INSERT INTO Suivre VALUES (1,1);
 INSERT INTO Suivre VALUES (2,1);
